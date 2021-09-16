@@ -14,7 +14,7 @@
             v-for="item in items"
             :key="item"
           >
-            {{ item }}
+           <router-link :to="`${item.path}`"   >{{ item.title }}</router-link>
           </v-tab>
         </v-tabs>
      </v-toolbar>
@@ -30,8 +30,11 @@ export default {
   data: () => {
    return {
         tab: null,
+        // items: [
+        //   'BEAUTY & PERSONAL CARE', ' HOUSEHOLD', 'GROCERY', 'HOME NEEDS', 'TOYS', 'PHARMACY', 'MORE'
+        // ],
         items: [
-          'BEAUTY & PERSONAL CARE', ' HOUSEHOLD', 'GROCERY', 'HOME NEEDS', 'TOYS', 'PHARMACY', 'MORE'
+          {title:"Home",path:"/"}, {title:"About",path:"/about"}
         ],
       }
   },
